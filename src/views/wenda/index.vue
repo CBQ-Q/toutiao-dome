@@ -1,14 +1,12 @@
 <template>
-  <div id="app">
-
-    <router-view />
-
+  <div class="shouye">
+    <p>我是问答页</p>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'App'
+  name: 'wendaIndex'
 }
 </script>
 

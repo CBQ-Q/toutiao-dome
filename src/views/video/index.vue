@@ -1,14 +1,12 @@
 <template>
-  <div id="app">
-
-    <router-view />
-
+  <div class="shouye">
+    <p>我是视频页</p>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'App'
+  name: 'videoIndex'
 }
 </script>
 
