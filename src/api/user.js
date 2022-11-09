@@ -1,5 +1,5 @@
 import request from '@/utils/request'
-import store from '@/store'
+// import store from '@/store'
 
 export const login = (data) => {
   return request({
@@ -17,11 +17,17 @@ export const sendSms = mobile => {
 export const everyName = mobile => {
   return request({
     method: 'get',
-    url: '/v1_0/user',
+    url: '/v1_0/user'
     // 请求头
-    headers: {
-      // 必须要的token方式
-      Authorization: `Bearer ${store.state.user.token}`
-    }
+    // headers: {
+    //   // 必须要的token方式
+    //   Authorization: `Bearer ${store.state.user.token}`
+    // }
+  })
+}
+export const getUserChannle = mobile => {
+  return request({
+    method: 'get',
+    url: '/v1_0/user/channels'
   })
 }

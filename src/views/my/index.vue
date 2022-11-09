@@ -80,10 +80,11 @@ export default {
   data () {
     return {
       // 准备数组接收登录用户信息
-      everyList: []
+      everyList: {}
     }
   },
   computed: {
+    // 根据有无token 判断用户页面的显示隐藏
     ...mapState(['user'])
   },
   methods: {

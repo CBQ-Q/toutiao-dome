@@ -103,6 +103,7 @@ export default {
       try {
         const { data } = await login(user)
         this.$store.commit('setUser', data.data)
+        console.log(data.data)
         this.$toast.success('登录成功')
         // 登录成功跳转回我的页面
         this.$router.back()
@@ -140,7 +141,8 @@ export default {
 <style scoped lang="less">
 .page-nav-bar{
   background-color: #3296fa;
-::v-deep .van-nav-bar__title, .van-icon{
+::v-deep .van-nav-bar__title,
+.van-icon{
     color: white;
   }
     }

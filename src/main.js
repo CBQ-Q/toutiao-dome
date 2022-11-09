@@ -4,10 +4,12 @@ import router from './router'
 import store from './store'
 import './css/index.css'
 import 'amfe-flexible'
+import './utils/day'
 import {
   Button, NavBar, Form, Field,
   Toast, CountDown, Tabbar,
-  TabbarItem, Icon, Image as VanImage, Grid, GridItem, Cell, CellGroup, Dialog
+  TabbarItem, Icon, Image as VanImage, Grid, GridItem,
+  Cell, CellGroup, Dialog, Tab, Tabs, List, PullRefresh, Popup
 } from 'vant'
 Vue.use(Button)
 Vue.use(NavBar)
@@ -24,6 +26,11 @@ Vue.use(GridItem)
 Vue.use(Cell)
 Vue.use(CellGroup)
 Vue.use(Dialog)
+Vue.use(Tab)
+Vue.use(Tabs)
+Vue.use(List)
+Vue.use(PullRefresh)
+Vue.use(Popup)
 Vue.config.productionTip = false
 
 new Vue({
