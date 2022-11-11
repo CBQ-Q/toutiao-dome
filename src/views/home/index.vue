@@ -11,6 +11,7 @@
      size="small"
      round
      icon="search"
+     to="/search"
      >搜索</van-button>
     </van-nav-bar>
     <!-- 导航栏 -->
@@ -50,6 +51,8 @@
 import { getUserChannle } from '@/api/user'
 import ArcitleList from '@/views/home/components/arcitle-list.vue'
 import ChannelPopup from '@/views/home/components/channel-popup.vue'
+import { mapState } from 'vuex'
+import { getItem } from '@/utils/storage'
 export default {
   name: 'homeIndex',
   components: {
@@ -68,22 +71,55 @@ export default {
   },
   // 获取文章列表数据
   methods: {
+    // 初始获得
+    // async getChannle () {
+    //   try {
+    //     const { data } = await getUserChannle()
+    //     console.log(data)
+    //     this.channel = data.data.channels
+    //     console.log(this.channel)
+    //   } catch (error) {
+    //     console.log(error)
+    //   },
+
+    // 完整获得
     async getChannle () {
       try {
-        const { data } = await getUserChannle()
-        console.log(data)
-        this.channel = data.data.channels
-        console.log(this.channel)
+        // 声明一个空数组
+        let channels = []
+        // 先引入token 判断登录状态
+        if (this.user) {
+          // 如果登录了则请求用户数据
+          const { data } = await getUserChannle()
+          channels = data.data.channels
+        } else {
+          // 如果没有登录则取出本地存储的频道
+          const localChannels = getItem('TOUTIAO_CHANNEL')
+          // 判断本地有没有数据
+          if (localChannels) {
+            channels = localChannels
+          } else {
+            // 没有就请求默认数据
+            const { data } = await getUserChannle()
+            channels = data.data.channels
+          }
+        }
+        // 最后赋值给属性数组去遍历
+        this.channel = channels
       } catch (error) {
         console.log(error)
       }
     },
-    mirrored (index) {
+    mirrored (index, popupshow = true) {
       this.active = index
       // 设置false 子组件点击传过来index后就隐藏了popup弹框
       // 相应这边控制显示也的active也跳到相应的index上
-      this.popupshow = false
+      // 修改就显示 不修改就关闭弹窗跳出
+      this.popupshow = popupshow
     }
+  },
+  computed: {
+    ...mapState(['user'])
   }
 }
 </script>

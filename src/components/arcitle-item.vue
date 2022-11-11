@@ -1,7 +1,17 @@
 <template>
 <!-- // 请求全部文章内容 -->
+<!-- 跳转动态路由 -->
+<!-- 拼接路径 -->
+<!-- :to="'/acticle/'" + article.art_id -->
+<!-- :to="`/acticle/${article.art_id}`" -->
    <van-cell
    class="arcitle-item"
+   :to="{
+    name: 'article',
+    params: {
+      articleID: article.art_id
+    }
+   }"
  >
  <div slot="title" class="title van-multi-ellipsis--l2">{{ article.title }}</div>
  <!-- 搞个盒子装图片也是跟,下部信息,分行 -->
@@ -30,7 +40,7 @@
    fit="cover"
   :src="article.cover.images[0]"
 />
- </van-cell>
+   </van-cell>
 </template>
 
 <script>
