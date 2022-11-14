@@ -9,7 +9,7 @@
    :to="{
     name: 'article',
     params: {
-      articleID: article.art_id
+      articleId: article.art_id
     }
    }"
  >

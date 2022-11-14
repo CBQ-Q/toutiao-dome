@@ -9,7 +9,8 @@ import {
   Button, NavBar, Form, Field,
   Toast, CountDown, Tabbar,
   TabbarItem, Icon, Image as VanImage, Grid, GridItem,
-  Cell, CellGroup, Dialog, Tab, Tabs, List, PullRefresh, Popup, Search, Loading, Divider
+  Cell, CellGroup, Dialog, Tab, Tabs, List, PullRefresh,
+  Popup, Search, Loading, Divider, ImagePreview
 } from 'vant'
 Vue.use(Button)
 Vue.use(NavBar)
@@ -34,6 +35,7 @@ Vue.use(Popup)
 Vue.use(Search)
 Vue.use(Loading)
 Vue.use(Divider)
+Vue.use(ImagePreview)
 Vue.config.productionTip = false
 
 new Vue({

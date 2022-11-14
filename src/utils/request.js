@@ -44,7 +44,7 @@ request.interceptors.response.use(
           url: '/v1_0/authorizations',
           method: 'PUT',
           headers: {
-            Authorization: `Bearer ${store.state.user.refresh_token}`
+            Authorization: `Bearer ${store.state.user.token}`
           }
         })
         // 要将请求回来的最新的token保存到vuex当中
