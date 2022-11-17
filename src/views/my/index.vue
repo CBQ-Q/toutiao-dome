@@ -14,7 +14,11 @@
         <span class="name">{{everyList.name}}</span>
       </div>
       <div class="right">
-        <van-button class="bianji" round>编辑资料</van-button>
+        <van-button
+         class="bianji"
+          round
+          to="/user-amend"
+          >编辑资料</van-button>
       </div>
     </div>
     <div class="wend">

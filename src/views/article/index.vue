@@ -212,6 +212,7 @@ export default {
         this.article = data.data
         // console.log(this.article.content)
         // 想要拿到文章内容里的图片 必须再请求成功之后，而且数据驱动视图不是立即的 ，所以要加个定时器
+        // 渲染的操作是微任务 拿到iMG要渲染完成之后 添加定时器为红任务
         setTimeout(() => {
           this.Images()
         }, 0)

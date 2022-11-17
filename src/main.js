@@ -10,7 +10,7 @@ import {
   Toast, CountDown, Tabbar,
   TabbarItem, Icon, Image as VanImage, Grid, GridItem,
   Cell, CellGroup, Dialog, Tab, Tabs, List, PullRefresh,
-  Popup, Search, Loading, Divider, ImagePreview
+  Popup, Search, Loading, Divider, ImagePreview, Picker, DatetimePicker
 } from 'vant'
 Vue.use(Button)
 Vue.use(NavBar)
@@ -36,6 +36,8 @@ Vue.use(Search)
 Vue.use(Loading)
 Vue.use(Divider)
 Vue.use(ImagePreview)
+Vue.use(Picker)
+Vue.use(DatetimePicker)
 Vue.config.productionTip = false
 
 new Vue({

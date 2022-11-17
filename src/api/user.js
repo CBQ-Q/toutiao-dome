@@ -51,3 +51,26 @@ export const delFollow = target => {
     }
   })
 }
+// 用户个人信息
+export const getuser = () => {
+  return request({
+    method: 'get',
+    url: '/v1_0/user/profile'
+  })
+}
+// 修改用户信息
+export const amenduser = (data) => {
+  return request({
+    method: 'patch',
+    url: '/v1_0/user/profile',
+    data
+  })
+}
+// 修改用户头像
+export const updataphoto = (data) => {
+  return request({
+    method: 'patch',
+    url: '/v1_0/user/photo',
+    data
+  })
+}
